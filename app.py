@@ -53,6 +53,8 @@ d = d[d['ANTIBIOTIC'] == antibiotic]
 curves = curves[curves['ANTIBIOTIC'] == antibiotic]
 hc = hc[hc['ANTIBIOTIC'] == antibiotic]
 
+casrn = d['CASRN'].iloc[0]
+
 
 level = streamlit.sidebar.selectbox(
     'estimation unit',
@@ -96,7 +98,7 @@ hc = hc[hc['cutoff'].isin(show_hc)]
 
 #%% main column
 
-streamlit.title(antibiotic)
+streamlit.title(antibiotic + ' (CASRN: ' + casrn + ')')
 streamlit.markdown('estimated by **' + level + '**')
 
 
