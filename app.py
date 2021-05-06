@@ -46,12 +46,12 @@ d, curves, hc = load_data(
 
 antibiotic = streamlit.sidebar.selectbox(
     'antibiotic',
-    pandas.unique(d['ANTIBIOTIC'])
+    pandas.unique(d['Antibiotic'])
 )
 
-d = d[d['ANTIBIOTIC'] == antibiotic]
-curves = curves[curves['ANTIBIOTIC'] == antibiotic]
-hc = hc[hc['ANTIBIOTIC'] == antibiotic]
+d = d[d['Antibiotic'] == antibiotic]
+curves = curves[curves['Antibiotic'] == antibiotic]
+hc = hc[hc['Antibiotic'] == antibiotic]
 
 casrn = d['CASRN'].iloc[0]
 
@@ -149,7 +149,7 @@ fig = (
 
 
 if show_genus:
-    names_aes = plotnine.aes(label = 'name', color = 'genus')
+    names_aes = plotnine.aes(label = 'name', color = 'Genus')
 else:
     names_aes = plotnine.aes(label = 'name')
 
