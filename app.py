@@ -42,7 +42,7 @@ d, curves, hc = load_data(
 )
 
 
-#%% sidebar
+# %% sidebar
 
 antibiotic = streamlit.sidebar.selectbox(
     'antibiotic',
@@ -96,7 +96,7 @@ for cutoff in pandas.unique(hc['cutoff']):
 hc = hc[hc['cutoff'].isin(show_hc)]
 
 
-#%% main column
+# %% main column
 
 streamlit.title(antibiotic + ' (CASRN: ' + casrn + ')')
 streamlit.markdown('estimated by **' + level + '**')
@@ -168,7 +168,7 @@ if show_names:
 streamlit.pyplot(fig.draw())
 
 
-#%% data (for debugging)
+# %% data (for debugging)
 
 #streamlit.dataframe(d)
 #streamlit.dataframe(curves)
